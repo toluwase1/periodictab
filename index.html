@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+
+            background-color: #18181e;
+            font-family:'Nunito Semiboid';
+            text-align:center;
+        }
+
+         .group-period-director{
+            color: #fff;
+            width: 70px;
+            position: absolute;
+            font-size: 12px;
+            
+            top: 20px;
+                      
+        }
+        .left-num{
+            color: #fff;
+            display: grid;
+            font-size: 12px;
+            grid-template-columns: 40px;
+            grid-auto-rows: 45px;
+            grid-gap:13px;
+            position: absolute;
+            top: 128px;
+            left: 20px;
+        }
+        .top-num{
+            color: #fff;
+            font-size: 12px;
+            width: 1170px;
+            display: grid;
+            grid-template-columns: repeat(18,1fr);
+            margin: 10px 0 0 80px;   
+            position: absolute;
+        }
+      
+       
+        #content{
+            padding-top: 100px;
+            display: grid;
+            width: 1170px;
+            margin: 0 auto;
+            grid-template-columns:repeat( 18, 1fr);
+            grid-auto-rows:minmax(55px,auto);
+            grid-gap:4px;
+            margin: 10px 0 0 80px;    
+            grid-template-areas:
+            "one . . . . . . . . . . . . . . . . two"
+            "three four . . . . . . . . . . five six seven eight nine ten"
+            "eleven twelve . . . . . . . . . . thirteen fourteen fifteen sixteen seventeen eighteen"
+            "nineteen twenty twenty-one twenty-two twenty-three twenty-four twenty-five twenty-six twenty-seven twenty-eight twenty-nine thirty thirty-one thirty-two thirty-three thirty-four thirty-five thirty-six"
+            "thirty-seven thirty-eight thirty-nine forty forty-one forty-two forty-three forty-four forty-five forty-six forty-seven forty-eight forty-nine fifty fifty-one fifty-two fifty-three fifty-four"
+            "fifty-five fifty-six blank-one seventy-two seventy-three seventy-four seventy-five seventy-six seventy-seven seventy-eight seventy-nine eighty eighty-one eighty-two eighty-three eighty-four eighty-five eighty-six"
+            "eighty-seven eighty-eight blank-two hundred-four hundred-five hundred-six hundred-seven hundred-eight hundred-nine hundred-ten hundred-eleven hundred-twelve hundred-thirteen hundred-fourteen hundred-fifteen hundred-sixteen hundred-seventeen hundred-eighteen";
+        }
+        #content div{
+            
+            padding: 10px;
+            position: relative;
+            display: flex;
+           align-items: center;
+            justify-content: center;
+            
+        }
+        #content div p{
+            width: 100%;
+          font-size: 12px;
+          font-weight: 900;
+          position: absolute;
+          top: -10px;
+          left: 5px;
+          text-align: left;
+        }
+        #content div span{
+            vertical-align: center;
+            font-weight: 900;
+        }
+        .one,.six,.seven,.eight,.fifteen,.sixteen,.thirty-four{
+            background: #28583c;
+            color: #fff;
+        }
+        .two,.ten,.eighteen,.thirty-six,.fifty-four,.eighty-six,.hundred-eighteen{
+            background-color: #376012;
+            color: #fff;
+        }
+        .nine,.seventeen,.thirty-five,.fifty-three,.eighty-five,.hundred-seventeen{
+            background-color: #24607e;
+            color: #fff;
+        }
+        .five,.fourteen,.thirty-three,.thirty-two,.fifty-one,.fifty-two,.eighty-four{
+            background-color: #874a1e;
+            color: #fff;
+        }
+        .thirteen,.thirty-one,.forty-nine,.fifty,.eighty-one,.eighty-two,.eighty-three,
+        .hundred-thirteen,.hundred-fourteen,.hundred-fifteen,.hundred-sixteen{
+            background-color: #523e75;
+            color: #fff;
+        }
+        .twenty-one,.twenty-two,.twenty-three,.twenty-four,.twenty-five,.twenty-six,.twenty-seven,.twenty-eight,.twenty-nine,
+        .thirty,.thirty-nine,.forty,.forty-one,.forty-two,.forty-three,.forty-four,.forty-five,.forty-five,.forty-six,.forty-seven,
+        .forty-eight,.seventy-two,.seventy-three,.seventy-four,.seventy-five,.seventy-six,.seventy-seven,.seventy-eight,
+        .seventy-nine,.eighty,.hundred-four,.hundred-five,.hundred-six,.hundred-seven,.hundred-eight,.hundred-nine,
+        .hundred-ten,.hundred-eleven,.hundred-twelve{
+            background-color: #8a2a31;
+            color: #fff;
+        }
+        .four,.twelve,.twenty,.thirty-eight,.fifty-six,.eighty-eight{
+            background-color: #15487b;
+            color: #fff;
+        }
+        .three,.eleven,.nineteen,.thirty-seven,.fifty-five,.eighty-seven{
+            background-color: #7e2b57;
+            color: #fff;
+        }
+        .blank-one,.blank-two{
+            color: #fff;
+            font-weight: 900;
+        }
+        .one{
+            grid-area: one;
+           
+        }
+        .two{
+            grid-area: two;
+        }
+        .three{
+            grid-area: three;
+        }
+        .four{
+            grid-area: four;
+        }
+        .five{
+            grid-area: five;
+        }
+        .six{
+            grid-area: six;
+        }
+        .seven{
+            grid-area: seven;
+        }
+        .eight{
+            grid-area: eight;
+        }
+        .nine{
+            grid-area: nine;
+        }
+        .ten{
+            grid-area: ten;
+        }
+        .eleven{
+            grid-area: eleven;
+        }
+        .twelve{
+            grid-area: twelve;
+        }
+        .thirteen{
+            grid-area: thirteen;
+        }
+        .fourteen{
+            grid-area: fourteen;
+        }
+        .fifteen{
+            grid-area: fifteen;
+        }
+        
+        .sixteen{
+            grid-area: sixteen;
+        }
+
+        .seventeen{
+            grid-area: seventeen;
+        }
+        .eighteen{
+            grid-area: eighteen;
+        }
+        .nineteen{
+            grid-area:nineteen ;
+        }
+        .twenty{
+            grid-area:twenty;
+        }
+        .twenty-one{
+            grid-area: twenty-one;
+        }
+        .twenty-two{
+            grid-area:twenty-two ;
+        }
+        .twenty-three{
+            grid-area:twenty-three ;
+        }
+        .twenty-four{
+            grid-area:twenty-four ;
+        }
+        .twenty-five{
+            grid-area:twenty-five ;
+        }
+        .twenty-six{
+            grid-area:twenty-six ;
+        }
+        .twenty-seven{
+            grid-area: twenty-seven;
+        }
+        .twenty-eight{
+            grid-area:twenty-eight ;
+        }
+        .twenty-nine{
+            grid-area:twenty-nine ;
+        }
+        .thirty{
+            grid-area:thirty ;
+        }
+        .thirty-one{
+            grid-area:thirty-one ;
+        }
+        .thirty-two{
+            grid-area:thirty-two ;
+        }
+        .thirty-three{
+            grid-area: thirty-three;
+        }
+        .thirty-four{
+            grid-area:thirty-four ;
+        }
+        .thirty-five{
+            grid-area: thirty-five;
+        }
+        .thirty-six{
+            grid-area:thirty-six ;
+        }
+        .thirty-seven{
+            grid-area:thirty-seven ;
+        }
+        .thirty-eight{
+            grid-area: thirty-eight;
+        }
+        .thirty-nine{
+            grid-area:thirty-nine ;
+        }
+        .forty{
+            grid-area:forty ;
+        }
+        .forty-one{
+            grid-area:forty-one ;
+        }
+      
+        .forty-two{
+            grid-area:forty-two ;
+        }
+        .forty-three{
+            grid-area: forty-three;
+        }
+        .forty-four{
+            grid-area:forty-four ;
+        }
+        .forty-five{
+            grid-area:forty-five ;
+        }
+        .forty-six{
+            grid-area:forty-six ;
+        }
+        .forty-seven{
+            grid-area:forty-seven ;
+        }
+        .forty-eight{
+            grid-area:forty-eight ;
+        }
+        .forty-nine{
+            grid-area:forty-nine ;
+        }
+        .fifty{
+            grid-area:fifty ;
+        }
+        .fifty-one{
+            grid-area: fifty-one;
+        }
+        .fifty-two{
+            grid-area: fifty-two;
+        }
+         .fifty-three{
+            grid-area: fifty-three;
+        }
+        .fifty-four{
+            grid-area:fifty-four ;
+        }
+        .fifty-five{
+            grid-area:fifty-five ;
+        }
+        .fifty-six{
+            grid-area:fifty-six ;
+        }
+        .blank-one{
+            grid-area: blank-one;
+        }
+        .seventy-two{
+            grid-area:seventy-two ;
+        }
+        .seventy-three{
+            grid-area:seventy-three;
+        }
+        .seventy-four{
+            grid-area:seventy-four;
+        }
+        .seventy-five{
+            grid-area:seventy-five;
+        }
+        .seventy-six{
+            grid-area:seventy-six;
+        }
+        .seventy-seven{
+            grid-area:seventy-seven;
+        }
+        .seventy-eight{
+            grid-area:seventy-eight;
+        }
+        .seventy-nine{
+            grid-area:seventy-nine;
+        }
+        .eighty{
+            grid-area:eighty;
+        }
+        .eighty-one{
+            grid-area:eighty-one;
+        }
+        .eighty-two{
+            grid-area:eighty-two;
+        }
+        .eighty-three{
+            grid-area:eighty-three;
+        }
+        .eighty-four{
+            grid-area:eighty-four;
+        }
+        
+        .eighty-five{
+            grid-area:eighty-five;
+        }
+        .eighty-six{
+            grid-area:eighty-six;
+        }
+        .eighty-seven{
+            grid-area:eighty-seven;
+        }
+        .eighty-eight{
+            grid-area:eighty-eight;
+        }
+        .blank-two{
+            grid-area:blank-two;
+        }
+        .hundred-four{
+            grid-area:hundred-four;
+        }
+        .hundred-five{
+            grid-area:hundred-five;
+        }
+        .hundred-six{
+            grid-area:hundred-six;
+        }
+       .hundred-seven{
+            grid-area:hundred-seven;
+        }
+        .hundred-eight{
+            grid-area:hundred-eight;
+        }
+       
+        .hundred-nine{
+            grid-area:hundred-nine;
+        }
+        .hundred-ten{
+            grid-area:hundred-ten;
+        }
+        .hundred-eleven{
+            grid-area:hundred-eleven;
+        }
+        .hundred-twelve{
+            grid-area:hundred-twelve;
+        }
+        .hundred-thirteen{
+            grid-area:hundred-thirteen;
+        }
+        .hundred-fourteen{
+            grid-area:hundred-fourteen;
+        }
+        .hundred-fifteen{
+            grid-area:hundred-fifteen;
+        }
+        .hundred-sixteen{
+            grid-area:hundred-sixteen;
+        }
+        .hundred-seventeen{
+            grid-area:hundred-seventeen;
+        }
+        .hundred-eighteen{
+            grid-area:hundred-eighteen;
+        }
+        
+       
+       
+    </style>
+
+        <div class="group-period-director">
+                <div class="group-period">
+                <div class="group">Group →</div>
+                <div class="period">↓ Period</div>
+                </div>
+        </div>
+    <!-- left numbering layout -->
+    <div class="left-num">
+        <div class="box box1">
+            <div class="num">1</div>
+          </div>
+    
+          <div class="box box2">
+            <div class="num">2</div>
+          </div>
+    
+          <div class="box box3">
+            <div class="num">3</div>
+          </div>
+    
+          <div class="box box4">
+            <div class="num">4</div>
+          </div>
+    
+          <div class="box box5">
+            <div class="num">5</div>
+          </div>
+    
+          <div class="box box6">
+            <div class="num">6</div>
+          </div>
+    
+          <div class="box box7">
+            <div class="num">7</div>
+          </div>
+    
+    </div>
+    <!-- top numbering layout -->
+    <div class="top-num">
+        
+          <div class="box box1">
+            <div class="num">1</div>
+          </div>
+    
+          <div class="box box2">
+            <div class="num">2</div>
+          </div>
+    
+          <div class="box box3">
+            <div class="num">3</div>
+          </div>
+    
+          <div class="box box4">
+            <div class="num">4</div>
+          </div>
+    
+          <div class="box box5">
+            <div class="num">5</div>
+          </div>
+    
+          <div class="box box6">
+            <div class="num">6</div>
+          </div>
+    
+          <div class="box box7">
+            <div class="num">7</div>
+          </div>
+    
+          <div class="box box8">
+            <div class="num">8</div>
+          </div>
+    
+          <div class="box box9">
+            <div class="num">9</div>
+          </div>
+    
+          <div class="box box10">
+            <div class="num">10</div>
+          </div>
+    
+          <div class="box box11">
+            <div class="num">11</div>
+          </div>
+    
+          <div class="box box12">
+            <div class="num">12</div>
+          </div>
+    
+          <div class="box box13">
+            <div class="num">13</div>
+          </div>
+    
+          <div class="box box14">
+            <div class="num">14</div>
+          </div>
+    
+          <div class="box box15">
+            <div class="num">15</div>
+          </div>
+    
+          <div class="box box16">
+            <div class="num">16</div>
+          </div>
+    
+          <div class="box box17">
+            <div class="num">17</div>
+          </div>
+    
+          <div class="box box18">
+            <div class="num">18</div>
+          </div>
+        
+    </div>
+
+     <!-- periodic table elements layout -->
+
+    <div id="content">
+        
+
+       <div class="one">
+           <p>1</p>
+           <span>H</span>
+        </div> 
+            
+        <div class="two">
+            <p>2</p>
+            <span>He</span>
+        </div> 
+
+        <div class="three">
+            <p>3</p>
+            <span>Li</span>
+        </div> 
+        
+        <div class="four">
+            <p>4</p>
+            <span>Be</span>
+        </div>
+
+        <div class="five">
+            <p>5</p>
+            <span>B</span>
+            </div>
+
+        <div class="six">
+            <p>6</p>
+            <span>C</span>
+        </div> 
+        <div class="seven">
+            <p>7</p>
+            <span>N</span>
+            </div> 
+        <div class="eight">
+            <p>8</p>
+            <span>O</span>
+        </div>
+
+        <div class="nine">
+            <p>9</p>
+            <span>F</span>
+        </div>
+
+        <div class="ten">
+            <p>10</p>
+            <span>Ne</span>
+        </div>
+
+        <div class="eleven">
+            <p>11</p>
+            <span>Na</span>
+        </div>
+        <div class="twelve">
+            <p>12</p>
+            <span>Mg</span>
+        </div>
+        <div class="thirteen">
+            <p>13</p>
+            <span>Al</span>
+        </div>
+
+        <div class="fourteen">
+            <p>14</p>
+            <span>Si</span>
+        </div>
+        <div class="fifteen">
+            <p>15</p>
+            <span>P</span>
+        </div>
+
+        <div class="sixteen">
+            <p>16</p>
+            <span>S</span>
+        </div>
+        <div class="seventeen">
+            <p>17</p>
+            <span>Cl</span>
+        </div>
+        <div class="eighteen">
+            <p>18</p>
+            <span>Ar</span>
+        </div>
+        <!-- from nineteen -->
+        <div class="nineteen">
+            <p>19</p>
+            <span>K</span>
+        </div>
+        <div class="twenty">
+            <p>20</p>
+            <span>Ca</span>
+        </div>
+        <div class="twenty-one">
+            <p>21</p>
+            <span>Sc</span>
+        </div>
+        <div class="twenty-two">
+            <p>22</p>
+            <span>Ti</span>
+        </div>
+        <div class="twenty-three">
+            <p>23</p>
+            <span>V</span>
+        </div>
+        <div class="twenty-four">
+            <p>24</p>
+            <span>Cr</span>
+        </div>
+        <div class="twenty-five">
+            <p>25</p>
+            <span>Mn</span>
+        </div>
+        <div class="twenty-six">
+            <p>26</p>
+            <span>Fe</span>
+        </div>
+        <div class="twenty-seven">
+            <p>27</p>
+            <span>Co</span>
+        </div>
+        <div class="twenty-eight">
+            <p>28</p>
+            <span>Ni</span>
+        </div>
+        <div class="twenty-nine">
+            <p>29</p>
+            <span>Cu</span>
+        </div>
+        <div class="thirty">
+            <p>30</p>
+            <span>Zn</span>
+        </div>
+        <div class="thirty-one">
+            <p>31</p>
+            <span>Ga</span>
+        </div>
+        <div class="thirty-two">
+            <p>32</p>
+            <span>Ge</span>
+        </div>
+        <div class="thirty-three">
+            <p>33</p>
+            <span>As</span>
+        </div>
+        <div class="thirty-four">
+            <p>34</p>
+            <span>Se</span>
+        </div>
+        <div class="thirty-five">
+            <p>35</p>
+            <span>Br</span>
+        </div>
+        <div class="thirty-six">
+            <p>36</p>
+            <span>Kr</span>
+        </div>
+        <div class="thirty-seven">
+            <p>37</p>
+            <span>Rb</span>
+        </div>
+        <div class="thirty-eight">
+            <p>38</p>
+            <span>Sr</span>
+        </div>
+        <div class="thirty-nine">
+            <p>39</p>
+            <span>Y</span>
+        </div>
+        <div class="forty">
+            <p>40</p>
+            <span>Zr</span>
+        </div>
+        <div class="forty-one">
+            <p>41</p>
+            <span>Nb</span>
+        </div>
+        <div class="forty-two">
+            <p>42</p>
+            <span>Mo</span>
+        </div>
+        <div class="forty-three">
+            <p>43</p>
+            <span>Tc</span>
+        </div>
+        <div class="forty-four">
+            <p>44</p>
+            <span>Ru</span>
+        </div>
+        <div class="forty-five">
+            <p>45</p>
+            <span>Rh</span>
+        </div>
+        <div class="forty-six">
+            <p>46</p>
+            <span>Pd</span>
+        </div>
+        <div class="forty-seven">
+            <p>47</p>
+            <span>Ag</span>
+        </div>
+        <div class="forty-eight">
+            <p>48</p>
+            <span>Cd</span>
+        </div>
+        <div class="forty-nine">
+            <p>49</p>
+            <span>In</span>
+        </div>
+        <div class="fifty">
+            <p>50</p>
+            <span>Sn</span>
+        </div>
+        <div class="fifty-one">
+            <p>51</p>
+            <span>Sb</span>
+        </div>
+        <div class="fifty-two">
+            <p>52</p>
+            <span>Te</span>
+        </div>
+        <div class="fifty-three">
+            <p>53</p>
+            <span>I</span>
+        </div>
+        <div class="fifty-four">
+            <p>54</p>
+            <span>Xe</span>
+        </div>
+        <div class="fifty-five">
+            <p>55</p>
+            <span>Cs</span>
+        </div>
+        <div class="fifty-six">
+            <p>56</p>
+            <span>Ba</span>
+        </div>
+        <div class="blank-one">
+            <span>.</span>
+        </div>
+    <div class="seventy-two">
+        <p>72</p>
+        <span>Hf</span>
+    </div>
+    <div class="seventy-three">
+        <p>73</p>
+        <span>Ta</span>
+    </div>
+    <div class="seventy-four">
+        <p>74</p>
+        <span>W</span>
+    </div>
+    <div class="seventy-five">
+        <p>75</p>
+        <span>Re</span>
+    </div>
+    <div class="seventy-six">
+        <p>76</p>
+        <span>Os</span>
+    </div>
+    <div class="seventy-seven">
+        <p>77</p>
+        <span>Ir</span>
+    </div>
+    <div class="seventy-eight">
+        <p>78</p>
+        <span>Pt</span>
+    </div>
+    <div class="seventy-nine">
+        <p>79</p>
+        <span>Au</span>
+    </div>
+    <div class="eighty">
+        <p>80</p>
+        <span>Hg</span>
+    </div>
+    <div class="eighty-one">
+        <p>81</p>
+        <span>TL</span>
+    </div>
+        <div class="eighty-two">
+            <p>82</p>
+            <span>Pb</span>
+        </div>
+        <div class="eighty-three">
+            <p>83</p>
+            <span>Bi</span>
+        </div>
+        <div class="eighty-four">
+            <p>84</p>
+            <span>Po</span>
+        </div>
+        <div class="eighty-five">
+            <p>85</p>
+            <span>At</span>
+        </div>
+        <div class="eighty-six">
+            <p>86</p>
+            <span>Rn</span>
+        </div>
+        <div class="eighty-seven">
+            <p>87</p>
+            <span>Fr</span>
+        </div>
+        <div class="eighty-eight">
+            <p>88</p>
+            <span>Ra</span>
+        </div>
+        <div class="blank-two">
+            <span>..</span>
+        </div>
+        <div class="hundred-four">
+            <p>104</p>
+            <span>Rf</span>
+        </div>
+        <div class="hundred-five">
+            <p>105</p>
+            <span>Db</span>
+        </div>
+        <div class="hundred-six">
+            <p>106</p>
+            <span>Sg</span>
+        </div>
+        <div class="hundred-seven">
+            <p>107</p>
+            <span>Bh</span>
+        </div>
+        <div class="hundred-eight">
+            <p>108</p>
+            <span>Hs</span>
+        </div>
+        <div class="hundred-nine">
+            <p>109</p>
+            <span>Mt</span>
+        </div>
+       
+        <div class="hundred-ten">
+            <p>110</p>
+            <span>Ds</span>
+        </div>
+        <div class="hundred-eleven">
+            <p>111</p>
+            <span>Rg</span>
+        </div>
+        <div class="hundred-twelve">
+            <p>112</p>
+            <span>Cn</span>
+        </div>
+        <div class="hundred-thirteen">
+            <p>113</p>
+            <span>Nh</span>
+        </div>
+        <div class="hundred-fourteen">
+            <p>114</p>
+            <span>FL</span>
+        </div>
+        <div class="hundred-fifteen">
+            <p>115</p>
+            <span>Mc</span>
+        </div>
+        <div class="hundred-sixteen">
+            <p>116</p>
+            <span>Lv</span>
+        </div>
+        <div class="hundred-seventeen">
+            <p>117</p>
+            <span>Ts</span>
+        </div>
+        <div class="hundred-eighteen">
+            <p>118</p>
+            <span>Og</span>
+        </div>
+
+
+    </div>
+</body>
+</html>
